@@ -1,0 +1,186 @@
+<style>
+    .bd-example-parent {
+        width: 48%;
+    }
+    .bd-example-parent{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .bd-example {
+        padding: 1.5rem;
+        border-width: 1px;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        border-top-style: solid;
+        border-top-color: rgb(222, 226, 230);
+        border-right-width: medium;
+        border-right-style: solid;
+        border-right-color: rgb(222, 226, 230);
+        border-bottom-width: medium;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(222, 226, 230);
+        border-left-style: solid;
+        border-left-color: rgb(222, 226, 230);
+        align-items: flex-start;
+    }
+    .cards {
+        display: flex;
+        align-items: flex-start;
+    }
+    .sp-color {
+        color: #d70303;
+    }
+    .bordored-p {
+        border-width: 1px;
+        border-radius: .25rem;
+        border-style: solid;
+        border-color: rgb(222, 226, 230);
+        padding: 5px;
+        text-indent: 3ch;
+        text-align:justify;
+    }
+    .scrollable {
+        align-items: flex-start;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .friend {
+        display: inline-block;
+        margin: 15px;
+        padding: 1.5rem;
+        border-width: 1px;
+        border-radius: .25rem;
+        border-style: solid;
+        border-color: rgb(13, 109, 252);
+        align-items: center;
+    }
+    .img-circle {
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+    }
+    h2 {
+        font: 20px Helvetica;
+    }
+    p {font: 14px Helvetica;}
+    span {
+        margin-bottom: 5px;
+        text-indent: 0;
+    }
+    .post-text {
+        text-indent: 3ch;
+        text-align:justify;
+    }
+</style>
+
+<!--
+большинство css-классов в данной разметке - классы из bootstrap, который мы подключили к проекту, чтобы
+не писать самостоятельно стили
+ -->
+
+<div class='row row-cols-2' style='align-items: flex-start; width: 100%;'>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h2 class='text-end'><span class='badge rounded-pill bg-success'>Паттерн MVC</span></h2>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 8.1</span></h6>
+    <p class='bordored-p'>Используя паттерн <span class='badge bg-light text-dark'>MVC</span>, напишите приложение, выводящее список друзей и новостей вашего аккаунта в соцсети <span class='badge bg-light text-dark'>VK</span>. Для работы с вашим аккаунтом и данными в <span class='badge bg-light text-dark'>VK</span> используйте библиотеку <span class='badge bg-light text-dark'>vk-openapi</span>. Для представления полученных данных используйте шаблонизатор <span class='badge bg-light text-dark'>handlebars</span>. Реализуйте хранение шаблонов <span class='badge bg-light text-dark'>handlebars</span> и их структуру различными способами.</p>
+    <div id='header'></div>
+    <div class='btn-group btn-group-lg'>
+      <!-- Поскольку точка входа у нас одна - index.js, а доступ к другим модулям напрямую желательно не давать, для передачи
+           "маршрутов" в контроллер используется идея data-атрибутов DOM-элементов, в нашем случае - атрибуты data-rout, которые
+           будут в дальнейшем обрабатываться в точке входа index.js (обработчиком события на click).
+          Такой подход позволит сохранить нам и модульность, и масштабируемость приложения
+      -->
+      <button type='button' class='btn btn-outline-primary' data-route = 'friends'>Друзья</button>
+      <button type='button' class='btn btn-outline-primary' data-route = 'news'>Новости</button>
+      <button type='button' class='btn btn-outline-primary' data-route = 'altfriends'>Друзья (шаблон из файла)</button>
+    </div>
+    <br>
+    <br>
+    <div id='result' class='scrollable'></div>
+  </div>
+
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h2 class='text-end'><span class='badge rounded-pill bg-success'>Паттерн MVVM</span></h2>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 8.2</span></h6>
+    <p class='bordored-p'>Используя паттерн <span class='badge bg-light text-dark'>MVVM</span>, напишите приложение, формирующее приветствие нового участника интернет-сообщества.</p>
+    <div class='bd-example'>
+      <div class='text-end'><span class='badge bg-light text-dark'>ViewModel (Модель Представления)</span></div>
+      <form>
+        <div class='checkbox'>
+          <label>
+            <input type='checkbox' checked id='bindingEnabled'> Динамическое связывание
+          </label>
+        </div>
+        <div class='form-group'>
+          <div class='text-end'><label for='firstName'><span class='badge bg-info text-dark'>Имя:</span></label></div>
+          <input class='form-control' id='firstName' placeholder='Имя' data-bind='firstName'>
+        </div>
+        <br>
+        <div class='form-group'>
+          <div class='text-end'><label for='lastName'><span class='badge bg-info text-dark'>Фамилия:</span></label></div>
+          <input class='form-control' id='lastName' placeholder='Фамилия' data-bind='lastName'>
+        </div>
+        <br>
+        <div class='form-group'>
+          <div class='text-end'><label for='old'><span class='badge bg-info text-dark'>Возраст:</span></label></div>
+          <input class='form-control' id='old' placeholder='Возраст' data-bind='old'>
+        </div>
+        <br>
+        <div class='form-group'>
+          <div class='text-end'><label for='town'><span class='badge bg-info text-dark'>Город:</span></label></div>
+          <input class='form-control' id='town' placeholder='Город' data-bind='town'>
+        </div>
+      </form>
+    </div>
+    <br>
+    <div class='bd-example'>
+      <div class='text-end'><span class='badge bg-light text-dark'>View (Представление), подписчик на изменения ViewModel</span></div>
+     <h1>Привет!</h1>
+      <p>Меня зовут <span class='sp-color' data-bind='firstName'></span> <span class='sp-color' data-bind='lastName'></span>.</p>
+      <p>Мне <span class='sp-color' data-bind='old'></span> лет и я живу в городе <span class='sp-color' data-bind='town'></span>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Пояснение к данной разметке:
+ Шаблон handlebars можно задать в виде строки, помещенной в переменную, можно считать из файла [этот вариант таже будет использован],
+  либо можно поместить его в секцию <script>, указав тип, отличный от скрипта; в этом случае, все, что находится внутри
+ секции, будет восприниматься как обычный текст; преимущества (перед строкой) - можно искать шаблоны по id, плюс подсвечивается
+ разметка в IDE
+ -->
+<script type='text/x-handlebars-template' id='headerTemplate'>
+  <div class='bd-example'>
+    <h3><span class='badge bg-primary'>Данные из VK-аккаунта</span></h3>
+    <h1>{{first_name}} {{last_name}}</h1>
+  </div>
+  <br>
+</script>
+
+<script type='text/x-handlebars-template' id='friendsTemplate'>
+  <div id='friendsList'>
+    {{#each list}}
+        <div class='friend text-center'>
+            <img src='{{photo_100}}' class='img-circle'>
+            <br>
+            <br>
+            <div><span class='badge bg-primary'>{{first_name}}<br>{{last_name}}</span></div>
+        </div>
+    {{/each}}
+  </div>
+</script>
+
+<script type='text/x-handlebars-template' id='newsTemplate'>
+  <div class='news'>
+    {{#each list}}
+      {{#if text}}
+          <div class='post'>
+            <b>{{formatDate date}}</b>
+            <div class='post-text'>{{text}}</div>
+          </div>
+          <hr>
+      {{/if}}
+    {{/each}}
+  </div>
+</script>

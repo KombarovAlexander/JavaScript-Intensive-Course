@@ -1,0 +1,7 @@
+<div>
+      <span class='badge bg-primary position-relative'>{{first_name}}<br>{{last_name}}{{#if bdate}}<span class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>{{bdate}}</span>{{else}}{{/if}}
+      </span>
+      <p>
+       {{#if country}}{{country.title}}{{#if city}}, {{city.title}}{{else}}{{/if}}{{else}}{{#if city}}{{city.title}}{{else}}{{/if}}{{/if}} 
+      </p>
+</div>

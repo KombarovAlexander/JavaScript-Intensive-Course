@@ -1,0 +1,15 @@
+<div class = 'cards'>
+    {{#each list}}
+        <div class='friend text-center'>
+          <div class="info">
+            {{> altfriendsInfo.hbs this}}
+          </div>
+          <div>
+            <img class ='img-circle' src='{{photo_100}}'>
+          </div>
+          <div>
+            {{> altfriendsUniversity.hbs this}}
+          </div>
+        </div>
+    {{/each}}
+</div>

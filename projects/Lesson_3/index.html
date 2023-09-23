@@ -1,0 +1,244 @@
+<!-- В стилях используется bootstrap -->
+<style>
+    .bd-example-parent {
+        width: 30%;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .bd-example {
+        padding: 1.5rem;
+        border-width: 1px;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        border-top-style: solid;
+        border-top-color: rgb(222, 226, 230);
+        border-right-width: medium;
+        border-right-style: solid;
+        border-right-color: rgb(222, 226, 230);
+        border-bottom-width: medium;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(222, 226, 230);
+        border-left-style: solid;
+        border-left-color: rgb(222, 226, 230);
+    }
+    .bordored-p {
+        border-width: 1px;
+        border-radius: .25rem;
+        border-style: solid;
+        border-color: rgb(222, 226, 230);
+        padding: 5px;
+        text-indent: 3ch;
+        text-align:justify;
+    }
+    button {margin-top: 5px;}
+    span {
+        margin-bottom: 5px;
+        text-indent: 0;
+    }
+    p {font: 14px Helvetica;}
+    .p-color {
+        color: #880000;
+    }
+    pre {
+        border-radius: .75rem;
+        font: 10px Helvetica;
+        padding: 0;
+        background-color: rgba(1, 101, 1, 0.05);
+    }
+</style>
+
+<div class='row row-cols-3' style='align-items: flex-start; width: 100%;'>
+<!-- Разметка для задания 4.1 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.1</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая создает элемент с тегом <span class='badge bg-light text-dark'>div</span>. В созданный элемент необходимо помемтить текст, переданный в параметре <span class='badge bg-light text-dark'>text</span>.</p>
+    <div id = 'host41' class='bd-example'>
+     <button id = 'btn41' class='btn btn-success'>Создать элемент div</button>
+    </div>
+  </div>
+
+<!-- Разметка для задания 4.2 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+   <h6><span class='badge rounded-pill bg-danger'>Задание 4.2</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая вставляет элемент, переданный в параметре <span class='badge bg-light text-dark'>what</span>, в начало элемента, переданного в параметре <span class='badge bg-light text-dark'>where</span>.</p>
+    <div id = 'host' class='bd-example'>
+     <button id = 'one' class='btn btn-success'>Перемещаемая кнопка</button>
+      <span class='badge bg-light text-dark'>Что вставляем</span>
+    </div>
+    <br>
+    <div id = 'two' class='bd-example'>
+      <button id = 'btn2' class='btn btn-outline-primary'>Buton 1</button>
+      <button id = 'btn3' class='btn btn-outline-primary'>Buton 2</button>
+     <button id = 'btn4' class='btn btn-outline-primary'>Buton 3</button>
+     <button id = 'miracle' class='btn btn-danger'>Переместить кнопку</button>
+     <span class='badge bg-light text-dark'>Чем вставляем</span>
+   </div>
+  </div>
+
+<!-- Разметка для задания 4.3 и 4.4 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.3</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая перебирает все дочерние элементы узла, переданного в параметре <span class='badge bg-light text-dark'>where</span>. Функция должна вернуть массив дочерних элементов, следующим соседом которых является элемент с тегом <span class='badge bg-light'><code>&lt; p &gt;</code></span>.</p>
+    <button id = 'btn43' class='btn btn-success'>Получить массив элементов</button>
+    <br>
+    <br>
+   <div class='bd-example'>
+     <span class='badge bg-light text-dark'>Фрагмент разметки:</span>
+     <br>
+     <pre>
+        <code id='code-1'>
+
+       </code>
+      </pre>
+      <div class='bd-example'>
+        <p id='answer43' class='p-color'></p>
+      </div>
+     <div id = 'div-1' class='hidden'> Div-1
+       <div id = 'div-2'></div>
+       <a id = 'a-1'>a-1</a>
+        <p id = 'p-1'>p-1</p>
+       <span id = 'span-1'>span-1</span>
+        <p id = 'p-2'></p>
+        <p id = 'p-3'>p-3</p>
+        <div id = 'div-3'></div>
+       <p id = 'p-4'>p-4</p>
+      </div>
+   </div>
+   <br>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.4</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая перебирает все дочерние узлы типа "элемент" внутри узла, переданного в параметре <span class='badge bg-light text-dark'>where</span>, и возвращает массив из текстового содержимого найденных элементов.</p>
+    <button id = 'btn44' class='btn btn-outline-primary'>Получить массив текстового содержимого элементов</button>
+  </div>
+</div>
+
+<div class='row row-cols-3' style='align-items: flex-start; width: 100%;'>
+<!-- Разметка для задания 4.5, 4.6, 4.7, 4.8, 5.1 и 5.2 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+   <h6><span class='badge rounded-pill bg-danger'>Задание 4.5</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая перебирает все дочерние узлы элемента, переданного в параметре <span class='badge bg-light text-dark'>where</span>, и удаляет все текстовые узлы (рекурсию не использовать).</p>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.6</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая перебирает все дочерние узлы элемента, переданного в параметре <span class='badge bg-light text-dark'>where</span>, и рекурсивно удаляет все текстовые узлы.</p>
+    <div class='bd-example'>
+      <span class='badge bg-light text-dark'>Фрагмент разметки:</span>
+      <br>
+      <pre>
+        <code id='code-2'>
+
+        </code>
+      </pre>
+      <button id = 'btnDel' class='btn btn-primary'>Удалить текстовые элементы (без рекурсии)</button>
+      <button id = 'btnDelR' class='btn btn-danger'>Удалить текстовые элементы (рекурсивно)</button>
+      <button id = 'btnRecover' class='btn btn-success'>Восстановить исходную HTML-разметку</button>
+    </div>
+    <br>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.7</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая собирает статистику по всем узлам элемента, переданного в параметре <span class='badge bg-light text-dark'>root</span>. Функция должна вернуть объект с вложенными объектами, содержащими информацию о количестве текстовых узлов, элементов каждого тега и элементов каждого класса. Для работы с классами рекомендуется использовать <span class='badge bg-light text-dark'>classList</span> и постараться обойтись без глобальных переменных.</p>
+    <div class='bd-example'>
+      <span class='badge bg-light text-dark'>Статистика по DOM-дереву:</span>
+      <pre>
+       <code id='code-3'>
+
+       </code>
+      </pre>
+      <button id = 'btnStats' class='btn btn-outline-primary'>Получить статистику по DOM-дереву</button>
+    </div>
+
+<!-- Часть DOM-дерева для удаления эл-от и сбора статистики; для верхнего эл-та - класс hidden, чтобы не отображался и не мешал -->
+   <div id = 'div0' class='hidden'>
+     <div id = 'div1'>Div1
+       <div id = 'div2' class='div-4'>Div2
+          <div id = 'div3' class='div-4'>
+            <div id = 'deldiv'>
+             <div id = 'div5' class='div-4'>
+                <span class='span-2'>spn1</span>
+                  Текст после span-1 - 1
+                  Текст после span-1 - 2
+                  Текст после span-1 - 3
+                  Текст после span-1 - 4
+             </div>
+            </div>
+            текст после deldiv
+          </div>
+          текст после div3
+      </div>
+        текст после Div2
+        еще текст после Div2
+        <span class='span-2'>span-2
+          <p id = 'p1' class='p2'>
+           <p id = 'p2' class='p2'></p>
+            текст после p2
+          </p>
+            текст после p1
+        </span>
+          текст после span-2
+        <p id = 'p3' class='p2'></p>
+          текст после p3
+        <div id = 'div4' class='div-4'>
+          <p id = 'p4'>
+           <a id = 'a1'>a1</a>
+            текст после a1
+          </p>
+          текст после p4
+        </div>
+          текст после div4
+        <p id = 'p5'>p5</p>
+          текст после p5
+     </div>
+   </div>
+<!-- х -->
+
+  </div>
+
+<!-- Разметка для задания 4.8 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 4.8</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая отслеживает добавление и удаление элемента, переданного в параметре <span class='badge bg-light text-dark'>where</span>. Отслеживание должно работать вне зависимости от глубины создаваемых (удаляемых) элементов.</p>
+    <div class='bd-example'>
+     <span class='badge bg-light text-dark'>Фрагмент разметки:</span>
+     <br>
+     <pre>
+      <code id='code48'>
+
+      </code>
+     </pre>
+     <button id = 'btnAdd' class='btn btn-primary'>Добавить элементы</button>
+     <button id = 'btnDlt' class='btn btn-danger'>Удалить элементы</button>
+     <button id = 'btnRecvr' class='btn btn-success'>Восстановить исходную HTML-разметку</button>
+    </div>
+  </div>
+
+<!-- Разметка для задания 5.1 - 5.3 -->
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 5.1</span></h6>
+    <p class='bordored-p'>Напишите функцию, возвращающую <span class='badge bg-light text-dark'>Promise</span>, который должен быть разрешен через указанное количество секунд.</p>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 5.2</span></h6>
+    <p class='bordored-p'>Напишите функцию, возвращающую <span class='badge bg-light text-dark'>Promise</span>, который должен быть разрешен массивом городов в качестве значения. Массив городов находится по следующему <a class='btn rounded-pill btn btn-outline-secondary py-0' style='font-size: 0.9em; text-indent: 0;' href='https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json' role='button'>адресу</a> Элементы полученного массива должны быть отсортированы по названию города.</p>
+    <div class='bd-example'>
+      <button id = 'startTimerPromis' type='button' class='btn btn-primary position-relative'>Запустить промис с таймером
+       <span id = 'timerSpan' class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+         15 сек.
+        </span>
+     </button>
+     <button id = 'startBtnFetch' class='btn btn-success'>Запустить промис с fetch</button>
+    </div>
+    <br>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 5.3</span></h6>
+    <p class='bordored-p'>Реализуйте следующий функционал: Необходимо загрузить <span class='badge bg-light text-dark'>список городов</span> и <span class='badge bg-light text-dark'>отсортировать</span> их в алфавитном порядке. В процессе загрузки списка городов должен отображаться <span class='badge bg-light text-dark'>индикатор загрузки</span>. По окончании загрузки должно быть отображено <span class='badge bg-light text-dark'>поле фильтрации</span>, ввод в которое изменяет состав отображаемых городов. В случае неудачной загрузки списка городов, необходимо вывести соответствующее <span class='badge bg-light text-dark'>сообщение</span> и отобразить кнопку для <span class='badge bg-light text-dark'>повторной загрузки</span> списка.</p>
+    <div id='root53' class='bd-example'>
+     <div class='d-flex justify-content-center'>
+        <div id='loading-block' class='spinner-border text-info' role='status'>Загрузка...
+          <span class='visually-hidden'>Загрузка...</span>
+        </div>
+     </div>
+     <div id='loading-failed'>
+        <p id='error-massage'>Не удалось загрузить города</p>
+       <button id='retry-button' class='btn btn-danger'>Повторить</button>
+     </div>
+     <div id='filter-block'>
+       <input id='filter-input' placeholder='Название города' class='form-control' type='text'>
+       <div id='filter-result' class='alert alert-info' role='alert' style='border:0rem; padding-bottom: 0; padding-top: 0;'></div>
+     </div>
+     <button id = 'loadTownButton' class='btn btn-success'>Загрузить список городов</button>
+   </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<style>
+    .container {
+        padding: 1.5rem;
+        border-width: 1px;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        border-top-style: solid;
+        border-top-color: rgb(222, 226, 230);
+        border-right-width: medium;
+        border-right-style: solid;
+        border-right-color: rgb(222, 226, 230);
+        border-bottom-width: medium;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(222, 226, 230);
+        border-left-style: solid;
+        border-left-color: rgb(222, 226, 230);
+        align-items: flex-start;
+        position: absolute;
+        width: 90%;
+        height: 90%;
+    }
+    .bd-example-parent{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    #myCanvas{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left :0;
+    }
+    .shapes {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        border: 1px solid rgb(139, 195, 254);
+        border-radius: 5px 0 0 5px;
+        border-right: none;
+        padding: 10px;
+        background: rgba(139, 195, 254, 0.7);
+    }
+    .shape {
+        border-bottom: 1px dashed #1280f2;
+        color: #1280f2;
+        cursor: pointer;
+    }
+    .shape:hover {
+        color: #555;
+    }
+</style>
+
+<div class='container shadow rounded bd-example-parent'>
+  <canvas id='myCanvas'></canvas> <!-- канва, на которой рисуем фигуры-->
+  <div class='shapes'> <!-- меню выбора фигуры, которую хотим создать-->
+    <div class='shape' data-shape="circle">circle</div> <!-- пункты меню для разных фигур; значения атрибута data-shape
+                                                          соответствуют названию ключей в карте соответствий-->
+    <div class='shape' data-shape="quad">quad</div>
+    <div class='shape' data-shape="triangle">triangle</div>
+  </div>
+</div>

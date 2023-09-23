@@ -1,0 +1,14 @@
+{{#if university_name}}
+   <br>
+   <div class='btn-group'>
+      <button type='button' class='btn btn-success dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>
+         ВУЗ
+      </button>
+      <ul class='dropdown-menu'>
+        {{#if university_name}}<li class='dropdown-item'>{{university_name}}</li>{{else}}{{/if}}
+        {{#if faculty_name}}<li class='dropdown-item'>{{faculty_name}}</li>{{else}}{{/if}}
+        {{#if education_form}}<li class='dropdown-item'>{{education_form}}</li>{{else}}{{/if}}
+        {{#if graduation}}<li class='dropdown-item'>{{graduation}}</li>{{else}}{{/if}}
+      </ul>
+   </div>
+{{else}}{{/if}}

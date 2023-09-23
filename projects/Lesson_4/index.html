@@ -1,0 +1,162 @@
+<!-- В стилях используется bootstrap -->
+<style>
+    .bd-example-parent {
+        width: 48%;
+    }
+    .bd-example-parent-1 {
+        width: 30%;
+    }
+    .bd-example-parent, .bd-example-parent-1 {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .bd-example {
+        padding: 1.5rem;
+        border-width: 1px;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        border-top-style: solid;
+        border-top-color: rgb(222, 226, 230);
+        border-right-width: medium;
+        border-right-style: solid;
+        border-right-color: rgb(222, 226, 230);
+        border-bottom-width: medium;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(222, 226, 230);
+        border-left-style: solid;
+        border-left-color: rgb(222, 226, 230);
+        align-items: flex-start;
+    }
+    .bordored-p {
+        border-width: 1px;
+        border-radius: .25rem;
+        border-style: solid;
+        border-color: rgb(222, 226, 230);
+        padding: 5px;
+        text-indent: 3ch;
+        text-align:justify;
+    }
+    button {margin-top: 5px;}
+    span {
+        margin-bottom: 5px;
+        text-indent: 0;
+    }
+    p {font: 14px Helvetica;}
+    pre {
+        border-radius: .75rem;
+        font: 10px Helvetica;
+        padding: 0;
+        background-color: rgba(1, 101, 1, 0.05);
+    }
+    table, tr, th, td {
+        text-align: center;
+    }
+
+</style>
+
+<!-- Разметка для ДЗ 6.1 - 6.6 -->
+<div class='row row-cols-3' style='align-items: flex-start; width: 100%;'>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent-1'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.1</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая добавляет обработчик <span class='badge bg-light text-dark'>callbackFn</span> события <span class='badge bg-light text-dark'>eventName</span> к элементу <span class='badge bg-light text-dark'>target</span>.</p>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.2</span></h6>
+    <p class='bordored-p'>Напишите функцию, которая у элемента <span class='badge bg-light text-dark'>target</span> удаляет обработчик <span class='badge bg-light text-dark'>callbackFn</span> у события <span class='badge bg-light text-dark'>eventName</span>.</p>
+    <div class='bd-example'>
+      <button id = 'addEventListenerButton' class='btn btn-outline-primary'></button>
+      <button id = 'targetButton' class='btn btn-success'></button>
+      <button id = 'removeEventListenerButton' class='btn btn-danger'></button>
+    </div>
+  </div>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent-1'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.3</span></h6>
+    <p class='bordored-p'>Напишите функцию, отменяющую действия по умолчанию у указанного элемента.</p>
+    <div class='bd-example'>
+      <p class='text-end'>
+        <span class='badge bg-light text-dark'>Отменить действие по умолчанию у данного элемента:</span>
+        <a id='yandexURL' class='btn rounded-pill btn-outline-primary py-0' href='https://yandex.ru' role='button'>Яндекс</a>
+      </p>
+      <br>
+      <button id = 'preventDefaulBtutton' class='btn btn-success'>Запретить действие по умолчанию у ссылки Яндекс</button>
+    </div>
+    <br>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.4</span></h6>
+    <p class='bordored-p'>Напишите функцию, эмулирующую событие <span class='badge bg-light text-dark'>click</span> для элемента <span class='badge bg-light text-dark'>target</span>.</p>
+    <div class='bd-example'>
+      <button id = 'targetBtn' class='btn btn-outline-primary'>Кнопка targetBtn</button>
+      <button id = 'emulateClickButton' class='btn btn-danger'>Эмуляция клика на кнопке targetBtn</button>
+    </div>
+  </div>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent-1'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.5</span></h6>
+    <p class='bordored-p'>Напишите функцию, добавляющую обработчик события <span class='badge bg-light text-dark'>onClick</span> для элемента <span class='badge bg-light text-dark'>target</span>, который реагирует (вызывает функцию <span class='badge bg-light text-dark'>fn</span>) только на клики по элементам <span class='badge bg-light text-dark'>BUTTON</span> внутри <span class='badge bg-light text-dark'>target</span>.</p>
+    <div><span class='badge bg-light text-dark'>Контейнер <span class='badge bg-secondary'>homeworkContainer:</span></span></div>
+    <div id='homeworkContainer' class='bd-example' style='display: grid; align-items: center;'>
+      <button id = 'Button-1' class='btn btn-outline-primary'>Кнопка Button-1</button>
+      <button id = 'Button-2' class='btn btn-outline-primary'>Кнопка Button-2</button>
+      <button id = 'Button-3' class='btn btn-outline-primary'>Кнопка Button-3</button>
+      <button id = 'Button-4' class='btn btn-outline-primary'>Кнопка Button-4</button>
+    </div>
+    <br>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.6</span></h6>
+    <p class='bordored-p'>Напишите функцию, добавляющую обработчик события к элементу <span class='badge bg-light text-dark'>target</span>, такой, чтобы он, после <span class='badge bg-light text-dark'>однократного срабатывания</span>, удалился и при последующих наступлениях этого события больше не срабатывал.</p>
+    <div class='bd-example' style='display: grid; align-items: center;'>
+      <button id = 'onceEventTargetBtutton' class='btn btn-outline-primary'>Приемник одноразового события</button>
+      <button id = 'setOnceEventBtutton' class='btn btn-success'>Установить одноразовое событие</button>
+    </div>
+  </div>
+</div>
+<!-- Разметка для ДЗ 6.7 и 7.0 -->
+<div class='row row-cols-2' style='align-items: flex-start; width: 100%;'>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 6.7</span></h6>
+    <p class='bordored-p'>Реализуйте следующий функционал: при нажатии на кнопку <span class='badge bg-light text-dark'>"Добавить случайный div-элемент элемент"</span> внутри контейнера должен создаваться <span class='badge bg-light text-dark'>div</span> со случайными размерами, цветом и позицией в контейнере. Пользователь должен иметь возможность перетаскивать созданный элемент внутри контейнера, используя механизм <span class='badge bg-light text-dark'>drag and drop</span>. Использование сторонних библиотек запрещено.</p>
+    <div id='homeworkContainerOne' class='bd-example' style='height: 400px;'>
+    </div>
+    <br>
+    <button id = 'addDiv' class='btn btn-success'>Добавить случайный div-элемент элемент</button>
+  </div>
+  <div class='bd-example shadow p-3 mb-5 bg-body rounded bd-example-parent'>
+    <h6><span class='badge rounded-pill bg-danger'>Задание 7.1 - 7.3</span></h6>
+    <p class='bordored-p'>Реализуйте редактор <span class='badge bg-light text-dark'>cookies</span>, который поддерживает <span class='badge bg-light text-dark'>добавление</span>, <span class='badge bg-light text-dark'>удаление</span> и <span class='badge bg-light text-dark'>фильтрацию</span> содержимого таблицы <span class='badge bg-light text-dark'>cookies</span>.</p>
+    <div class='bd-example'>
+      <div class='table-responsive'>
+        <table id='cookieTable' class='table table-hover table-light table-bordered table-striped caption-top'>
+          <caption>Активные cookies</caption>
+          <thead class='table-primary'>
+            <tr>
+              <th scope='col'>Имя</th>
+              <th scope='col'>Значение</th>
+              <th scope='col'>Удалить</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div>
+        <h6 class='text-end'><span class='badge rounded-pill bg-info text-dark'>Фильтр для таблицы cookie:</span></h6>
+        <input type='text' id='filterCookie' placeholder='Текущий фильтр' class='form-control'>
+      </div>
+    </div>
+    <br>
+      <div id='inputDiv' class='bd-example' style='width: 100%;'>
+        <div>
+          <h6 class='text-end'><span class='badge rounded-pill bg-info text-dark'>Имя cookie:</span></h6>
+          <input type='text' id='cookieName' placeholder='Имя cookie' class='form-control'>
+        </div>
+        <div>
+          <br>
+          <h6 class='text-end'><span class='badge rounded-pill bg-info text-dark'>Значение cookie:</span></h6>
+          <input type='text' id='cookieValue' placeholder='Значение cookie' class='form-control'>
+        </div>
+        <div>
+          <br>
+          <h6 class='text-end'><span class='badge rounded-pill bg-info text-dark'>Период действия cookie (в днях):</span></h6>
+         <input type='text' id='cookieExpires' placeholder='Период действия cookie' class='form-control'>
+        </div>
+      </div>
+        <button id = 'addCookie' class='btn btn-success'>Добавить cookie</button>
+  </div>
+</div>
